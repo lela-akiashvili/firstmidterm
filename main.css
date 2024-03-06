@@ -1,0 +1,892 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-image: url(./img/background.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0rem 1.5rem 7rem 1.5rem;
+}
+header a {
+  text-decoration: none;
+}
+header h1 {
+  font-family: "Suez One", serif;
+  color: #242444;
+}
+header h3 {
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+@media (min-width: 904px) {
+  header {
+    min-height: 100vh;
+    padding: 0 1rem;
+  }
+  header h1 {
+    font-size: 4rem;
+  }
+  header h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    min-height: 100vh;
+    padding: 0 7rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 5rem;
+    padding-top: 3rem;
+  }
+  header h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+main {
+  justify-content: center;
+}
+main p {
+  padding: 0 0 1rem 0;
+}
+@media (min-width: 904px) {
+  main {
+    position: relative;
+  }
+}
+@media (min-width: 1880px) {
+  main .sec-1 {
+    padding-top: 20rem;
+  }
+}
+@media (min-width: 2560px) {
+  main .sec-1 {
+    padding-top: 23rem;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  justify-content: center;
+}
+footer h2 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  color: #242444;
+}
+footer p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+header nav .home-ul1 {
+  margin: 0;
+  padding: 0;
+}
+header nav .home-ul1 .home {
+  padding: 1rem;
+  list-style: none;
+  font-family: courgette;
+  font-size: 1.6rem;
+  color: white;
+  background-color: #da392b;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+header nav .nav-ul-lg {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  background-color: #f8fafb;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #242444;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+@media (max-width: 650px) {
+  header nav .nav-ul-lg {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 650px) and (min-width: 650px) {
+  header nav .nav-ul-lg {
+    display: none;
+  }
+}
+header nav .nav-ul-lg > :first-child {
+  background-color: #da392b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: white;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+header nav .nav-ul-lg li {
+  padding: 18px 29px;
+}
+header nav .nav-ul-lg li:hover {
+  background-color: #da392b;
+  color: white;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+header nav .menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #f8fafb;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+@media (min-width: 904px) {
+  header nav .menu {
+    display: none;
+  }
+}
+@media (min-width: 650px) {
+  header nav .menu {
+    display: none;
+  }
+}
+header nav .menu li {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #242444;
+}
+header .buttons {
+  align-self: flex-start;
+  display: flex;
+  gap: 1em;
+  padding-bottom: 2rem;
+}
+header .buttons button {
+  display: flex;
+  background-color: black;
+  color: white;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border-radius: 8px;
+  border: none;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+@media (max-width: 320px) {
+  header .buttons button {
+    font-size: x-small;
+  }
+}
+header .buttons button span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+header .buttons button .big-fnt {
+  font-size: 1.3em;
+}
+header .buttons button img {
+  margin-right: 0.3rem;
+}
+
+main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
+  gap: 1.3rem;
+  padding: 1.3rem;
+  background-color: #f6f4f0;
+}
+main .cards .card1,
+main .cards .card2,
+main .cards .card3,
+main .cards .card4 {
+  border-radius: 1.9rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+main .cards .card1 img,
+main .cards .card2 img,
+main .cards .card3 img,
+main .cards .card4 img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+main .cards .card1 .bg-gradient,
+main .cards .card2 .bg-gradient,
+main .cards .card3 .bg-gradient,
+main .cards .card4 .bg-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(224, 56, 10) 0%, rgba(255, 153, 0, 0.0790441176) 67%);
+}
+main .cards .card1 .bg-gradient span,
+main .cards .card2 .bg-gradient span,
+main .cards .card3 .bg-gradient span,
+main .cards .card4 .bg-gradient span {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+}
+main .cards .card1:hover img,
+main .cards .card2:hover img,
+main .cards .card3:hover img,
+main .cards .card4:hover img {
+  transform: scale(1.1);
+}
+main .cards .card1:hover span,
+main .cards .card2:hover span,
+main .cards .card3:hover span,
+main .cards .card4:hover span {
+  visibility: hidden;
+}
+main .cards .card4 span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .cards .card4 span h4 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+main .cards .card4 span i {
+  font-weight: bold;
+  font-size: 2rem;
+}
+@media (min-width: 904px) {
+  main .cards {
+    position: absolute;
+    transform: translate(0%, -50%);
+    grid-template-columns: repeat(4, 1fr);
+    background-color: transparent;
+    padding: 0 7rem;
+  }
+}
+@media (min-width: 1024px) {
+  main .cards {
+    padding: 0 9rem;
+  }
+}
+main .sec-1 {
+  background-color: #f6f4f0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+main .sec-1 h2 {
+  text-align: center;
+}
+main .sec-1 p {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: large;
+  text-align: center;
+  line-height: 1.6;
+}
+main .sec-1 h2 {
+  color: #242444;
+  font-family: "Suez One", serif;
+  margin: 0;
+}
+main .sec-1 h4 {
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+main .sec-1 p {
+  color: #242444;
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 650px) {
+  main .sec-1 {
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 904px) {
+  main .sec-1 {
+    padding: 10rem 5rem 0 5rem;
+  }
+  main .sec-1 h2 {
+    font-size: 2.7rem;
+    margin: 0;
+  }
+  main .sec-1 p {
+    padding: 0 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  main .sec-1 {
+    padding: 16rem 13rem 0 13rem;
+  }
+  main .sec-1 h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+main .sec-1 button {
+  border-radius: 10px;
+  padding: 20px 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: medium;
+  color: white;
+  background-color: #da392b;
+  border: 1px solid red;
+  cursor: pointer;
+  margin-top: 1.2rem;
+}
+main .sec-1 button:hover {
+  background-color: white;
+  border: 1px solid #242444;
+  color: #242444;
+}
+main .sec-1 div {
+  display: flex;
+  position: relative;
+}
+@media (min-width: 904px) {
+  main .sec-1 div {
+    margin: 0 4rem;
+  }
+}
+main .sec-1 div .relative-img {
+  margin-top: 50px;
+  border-radius: 25px;
+  width: 100%;
+  height: auto;
+}
+main .sec-1 div .absolute-img {
+  align-self: flex-end;
+  position: absolute;
+  left: 34%;
+  bottom: -10%;
+  width: 33%;
+}
+@media (min-width: 904px) {
+  main .sec-1 div .absolute-img {
+    left: -13%;
+  }
+}
+main .sec-2 {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f4f0;
+  padding: 1rem;
+}
+main .sec-2 h2 {
+  text-align: center;
+}
+main .sec-2 p {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: large;
+  text-align: center;
+  line-height: 1.6;
+}
+@media (min-width: 904px) {
+  main .sec-2 {
+    padding: 2rem 4rem;
+    background-image: url(./img/bg2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  main .sec-2 img {
+    display: none;
+  }
+}
+main .sec-2 h2 {
+  padding-top: 1rem;
+  font-size: 2.2rem;
+  color: #242444;
+  font-family: "Suez One", serif;
+  margin: 0;
+}
+main .sec-2 p {
+  color: #242444;
+  font-family: "Roboto", sans-serif;
+  padding: 1.5rem 12rem 5rem 12rem;
+  padding: inherit;
+}
+@media (min-width: 904px) {
+  main .sec-2 p {
+    padding: 1rem 10rem 7rem 10rem;
+  }
+}
+main .sec-2 .card-2-div {
+  display: grid;
+  gap: 1.3rem;
+  justify-content: center;
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+@media (min-width: 904px) {
+  main .sec-2 .card-2-div {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+  }
+  main .sec-2 .card-2-div img {
+    display: initial;
+  }
+}
+main .sec-2 .card-2-div .card-2 {
+  background-color: #f8fafb;
+  box-shadow: 2px 3px 6px rgb(243, 204, 179);
+  padding: 1rem;
+  border-radius: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+main .sec-2 .card-2-div .card-2 p {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+main .sec-2 .card-2-div .card-2 span {
+  display: flex;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  align-items: center;
+  justify-content: space-around;
+}
+main .sec-2 .card-2-div .card-2 span img {
+  width: 40%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 7px solid white;
+  box-shadow: 2px 3px 6px gainsboro;
+}
+main .sec-2 .card-2-div .card-2 span .card-title {
+  display: block;
+}
+main .sec-2 .card-2-div .card-2 span .card-title h4 {
+  margin: 0;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+main .sec-2 .card-2-div .card-2 span .card-title h5 {
+  margin: 0;
+  font-size: 1.4em;
+  font-family: "Roboto", sans-serif;
+  color: #242444;
+}
+main .sec-2 .card-2-div .card-2 p {
+  text-align: justify;
+  padding: 1rem;
+}
+main .sec-2 .card-2-div .card-2 .buttons {
+  align-self: center;
+  display: flex;
+  gap: 1em;
+}
+main .sec-2 .card-2-div .card-2 .buttons button {
+  display: flex;
+  background-color: black;
+  color: white;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border-radius: 8px;
+  border: none;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+@media (max-width: 320px) {
+  main .sec-2 .card-2-div .card-2 .buttons button {
+    font-size: x-small;
+  }
+}
+main .sec-2 .card-2-div .card-2 .buttons button span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main .sec-2 .card-2-div .card-2 .buttons button .big-fnt {
+  font-size: 1.3em;
+}
+main .sec-2 .card-2-div .card-2 .buttons button img {
+  all: unset;
+  margin-right: 0.3rem;
+}
+main .sec-3 {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  color: white;
+  padding-top: 1rem;
+  background-image: url(./img/bigbg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+main .sec-3 h2 {
+  text-align: center;
+}
+main .sec-3 p {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: large;
+  text-align: center;
+  line-height: 1.6;
+}
+main .sec-3 h4 {
+  margin: 0;
+  color: white;
+}
+main .sec-3 h2 {
+  font-family: "Suez One", serif;
+  color: white;
+  font-size: 1.7rem;
+  margin: 0;
+  padding: 0.4rem 0;
+  text-align: left;
+}
+main .sec-3 button {
+  border-radius: 10px;
+  padding: 20px 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: medium;
+  color: white;
+  background-color: rgb(212, 212, 8);
+  border: 1px solid red;
+  cursor: pointer;
+  border: none;
+}
+main .sec-3 button:hover {
+  border: none;
+  background-color: white;
+  color: #242444;
+}
+main .sec-3 img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 1024px) {
+  main .sec-3 {
+    background-attachment: fixed;
+    padding: 6rem 6rem 0 6rem;
+  }
+  main .sec-3 img {
+    width: 50%;
+    align-self: flex-end;
+  }
+  main .sec-3 h2 {
+    font-size: 5rem;
+    margin: 1rem 0;
+  }
+  main .sec-3 h4 {
+    font-size: larger;
+  }
+  main .sec-3 button {
+    margin: 2rem 0;
+  }
+}
+@media (min-width: 904px) {
+  main .sec-3 {
+    background-attachment: fixed;
+    padding: 6rem 6rem 0 6rem;
+  }
+  main .sec-3 img {
+    width: 50%;
+    align-self: flex-end;
+  }
+  main .sec-3 h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  main .sec-3 h4 {
+    font-size: larger;
+  }
+  main .sec-3 button {
+    margin: 2rem 0;
+  }
+}
+@media (min-width: 650px) {
+  main .sec-3 {
+    background-attachment: fixed;
+    padding: 6rem 6rem 0 6rem;
+  }
+  main .sec-3 img {
+    width: 50%;
+    align-self: flex-end;
+  }
+  main .sec-3 h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  main .sec-3 h4 {
+    font-size: larger;
+  }
+  main .sec-3 button {
+    margin: 2rem 0;
+  }
+}
+main .sec-4 {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-image: url(./img/lastbg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: 5px;
+}
+main .sec-4 h2 {
+  text-align: center;
+}
+main .sec-4 p {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: large;
+  text-align: center;
+  line-height: 1.6;
+}
+@media (min-width: 1024px) {
+  main .sec-4 {
+    flex-direction: row;
+    justify-content: space-around;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    justify-content: flex-end;
+  }
+}
+main .sec-4 .form-1 {
+  color: #242444;
+  background-color: white;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 2rem;
+  border-radius: 20px;
+}
+main .sec-4 .form-1 p {
+  margin: 0;
+  text-align: left;
+}
+main .sec-4 .form-1 h3 {
+  font-size: x-large;
+}
+main .sec-4 .form-1 div {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+main .sec-4 .form-1 div input {
+  min-height: 3rem;
+  border-radius: 10px;
+  border: 1px solid #242444;
+  margin: 0.6rem 0;
+  padding-left: 0.5rem;
+}
+main .sec-4 .form-1 div input:active {
+  outline: 2px solid #242444;
+}
+main .sec-4 .form-1 div input:hover {
+  border: 2px solid #242444;
+}
+main .sec-4 .form-1 div label {
+  padding: 10px 0;
+}
+main .sec-4 .form-1 div textarea {
+  border-radius: 10px;
+  border: 1px solid #242444;
+  margin: 10px 0;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+main .sec-4 .form-1 div textarea:active {
+  outline: 2px solid #242444;
+}
+main .sec-4 .form-1 div textarea:hover {
+  border: 2px solid #242444;
+}
+main .sec-4 .form-1 button {
+  background-color: #242444;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 0;
+  font-size: medium;
+}
+main .sec-4 .form-1 button:hover {
+  background-color: #da392b;
+}
+@media (min-width: 1024px) {
+  main .sec-4 .form-1 {
+    position: absolute;
+    bottom: 25%;
+    left: 8%;
+    color: #242444;
+    background-color: white;
+    padding: 3rem;
+  }
+  main .sec-4 .form-1 div .big-span {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+main .sec-4 .form-2 {
+  background-color: #da392b;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+}
+main .sec-4 .form-2 label {
+  padding: 0.8rem 0 0.8rem 0;
+  display: block;
+}
+main .sec-4 .form-2 input {
+  min-height: 58px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+main .sec-4 .form-2 input:active {
+  outline: 2px solid #242444;
+}
+main .sec-4 .form-2 input:hover {
+  border: 2px solid #242444;
+}
+main .sec-4 .form-2 button {
+  border-radius: 10px;
+  padding: 20px 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: medium;
+  color: white;
+  background-color: yellow;
+  border: 1px solid red;
+  cursor: pointer;
+  color: #242444;
+  min-width: 100%;
+}
+main .sec-4 .form-2 button:hover {
+  background-color: white;
+  color: #242444;
+}
+
+footer .home-ul {
+  align-self: center;
+  margin-top: 0;
+  padding: 0;
+  font-family: courgette;
+  font-size: 1.6rem;
+}
+footer .home-ul .home {
+  margin: 0;
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid #242444;
+  border-bottom: 1px solid #242444;
+}
+footer nav ul {
+  text-align: left;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  color: gray;
+  line-height: 1.6;
+}
+footer nav ul > :first-child {
+  color: #242444;
+  font-size: large;
+  font-weight: 600;
+}
+footer nav ul .buttonss {
+  display: flex;
+}
+footer nav ul .buttonss .buttons {
+  align-self: center;
+  padding-top: 25px;
+  align-self: flex-start;
+  display: flex;
+  gap: 15px;
+}
+footer nav ul .buttonss .buttons button {
+  display: flex;
+  background-color: black;
+  color: white;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border-radius: 8px;
+  border: none;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+@media (max-width: 320px) {
+  footer nav ul .buttonss .buttons button {
+    font-size: x-small;
+  }
+}
+footer nav ul .buttonss .buttons button span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer nav ul .buttonss .buttons button .big-fnt {
+  font-size: large;
+}/*# sourceMappingURL=main.css.map */

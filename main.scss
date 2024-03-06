@@ -1,0 +1,560 @@
+@use "base";
+@use "mixins" as *;
+@use "variables" as *;
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    .home-ul1 {
+      margin: 0;
+      padding: 0;
+      .home {
+        padding: 1rem;
+        list-style: none;
+        font-family: courgette;
+        font-size: 1.6rem;
+        color: white;
+        background-color: $header-color-red;
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+      }
+    }
+    .nav-ul-lg {
+      @include sm {
+        display: none;
+        visibility: hidden;
+
+        @include min-sm {
+          display: none;
+        }
+      }
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      > :first-child {
+        @include li($bg-clr: $header-color-red, $clr: white);
+      }
+      @include li;
+      li {
+        padding: 18px 29px;
+        &:hover {
+          background-color: $header-color-red;
+          color: white;
+          border-bottom-left-radius: 9px;
+          border-bottom-right-radius: 9px;
+        }
+      }
+    }
+    .menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: #f8fafb;
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+      @include md {
+        display: none;
+      }
+      @include min-sm {
+        display: none;
+      }
+      li {
+        padding: 1rem;
+        font-size: 1.5rem;
+        color: $default-fnt-clr;
+      }
+    }
+  }
+
+  .buttons {
+    align-self: flex-start;
+    display: flex;
+    gap: 1em;
+    padding-bottom: 2rem;
+    button {
+      @include btn-story;
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .big-fnt {
+        font-size: 1.3em;
+      }
+      img {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}
+main {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
+    gap: 1.3rem;
+    padding: 1.3rem;
+    background-color: $sec-bg-clr;
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+      @include card;
+    }
+    .card4 {
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h4 {
+          text-align: center;
+          font-size: 1.9rem;
+          margin: 0;
+          font-family: $default-fnt;
+        }
+        i {
+          font-weight: bold;
+          font-size: 2rem;
+        }
+      }
+    }
+    @include md {
+      position: absolute;
+      transform: translate(0%, -50%);
+      grid-template-columns: repeat(4, 1fr);
+      background-color: transparent;
+      padding: 0 7rem;
+    }
+    @include lg {
+      padding: 0 9rem;
+    }
+  }
+  .sec-1 {
+    background-color: $sec-bg-clr;
+    @include section;
+    padding: 1rem;
+    h2 {
+      color: $default-fnt-clr;
+      font-family: $title-fnt;
+      margin: 0;
+    }
+    h4 {
+      @include font-clr;
+    }
+    p {
+      color: $default-fnt-clr;
+      font-family: $default-fnt;
+    }
+    @include sm {
+      padding-top: 1rem;
+    }
+    @include md {
+      padding: 10rem 5rem 0 5rem;
+      h2 {
+        font-size: 2.7rem;
+        margin: 0;
+      }
+      p {
+        padding: 0 5rem;
+      }
+    }
+    @include lg {
+      padding: 16rem 13rem 0 13rem;
+      h2 {
+        font-size: 3rem;
+        margin: 0;
+      }
+    }
+
+    button {
+      @include btn-clr;
+      margin-top: 1.2rem;
+      &:hover {
+        background-color: white;
+        border: 1px solid $default-fnt-clr;
+        color: $default-fnt-clr;
+      }
+    }
+
+    div {
+      display: flex;
+      position: relative;
+      @include md {
+        margin: 0 4rem;
+      }
+      .relative-img {
+        margin-top: 50px;
+        border-radius: 25px;
+        width: 100%;
+        height: auto;
+      }
+      .absolute-img {
+        align-self: flex-end;
+        position: absolute;
+        left: 34%;
+        bottom: -10%;
+        width: 33%;
+        @include md {
+          left: -13%;
+        }
+      }
+    }
+  }
+  .sec-2 {
+    @include section;
+    background-color: $sec-bg-clr;
+    padding: 1rem;
+
+    @include md {
+      padding: 2rem 4rem;
+      img {
+        display: none;
+      }
+      background-image: url(./img/bg2.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom;
+    }
+
+    h2 {
+      padding-top: 1rem;
+      font-size: 2.2rem;
+      color: $default-fnt-clr;
+      font-family: $title-fnt;
+      margin: 0;
+    }
+    p {
+      color: $default-fnt-clr;
+      font-family: $default-fnt;
+      padding: 1.5rem 12rem 5rem 12rem;
+      padding: inherit;
+      @include md {
+        padding: 1rem 10rem 7rem 10rem;
+      }
+    }
+    .card-2-div {
+      display: grid;
+      gap: 1.3rem;
+      justify-content: center;
+      max-height: min-content;
+      @include md {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10rem;
+
+        img {
+          display: initial;
+        }
+      }
+      .card-2 {
+        @include card-2;
+        p {
+          text-align: justify;
+          padding: 1rem;
+        }
+        .buttons {
+          align-self: center;
+          display: flex;
+          gap: 1em;
+          button {
+            @include btn-story;
+            span {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .big-fnt {
+              font-size: 1.3em;
+            }
+            img {
+              all: unset;
+              margin-right: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sec-3 {
+    @include section;
+    align-items: flex-start;
+    color: white;
+    padding-top: 1rem;
+    background-image: url(./img/bigbg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    h4 {
+      margin: 0;
+      color: white;
+    }
+    h2 {
+      font-family: $title-fnt;
+      color: white;
+      font-size: 1.7rem;
+      margin: 0;
+      padding: 0.4rem 0;
+      text-align: left;
+    }
+    button {
+      @include btn-clr($bg-clr: rgb(212, 212, 8));
+      border: none;
+      &:hover {
+        border: none;
+        background-color: white;
+        color: $default-fnt-clr;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @include lg {
+      background-attachment: fixed;
+      padding: 6rem 6rem 0 6rem;
+      img {
+        width: 50%;
+        align-self: flex-end;
+      }
+      h2 {
+        font-size: 5rem;
+        margin: 1rem 0;
+      }
+      h4 {
+        font-size: larger;
+      }
+      button {
+        margin: 2rem 0;
+      }
+    }
+    @include md {
+      background-attachment: fixed;
+      padding: 6rem 6rem 0 6rem;
+      img {
+        width: 50%;
+        align-self: flex-end;
+      }
+      h2 {
+        font-size: 3rem;
+        margin: 1rem 0;
+      }
+      h4 {
+        font-size: larger;
+      }
+      button {
+        margin: 2rem 0;
+      }
+    }
+    @include min-sm {
+      background-attachment: fixed;
+      padding: 6rem 6rem 0 6rem;
+      img {
+        width: 50%;
+        align-self: flex-end;
+      }
+      h2 {
+        font-size: 3rem;
+        margin: 1rem 0;
+      }
+      h4 {
+        font-size: larger;
+      }
+      button {
+        margin: 2rem 0;
+      }
+    }
+  }
+  .sec-4 {
+    @include section;
+    padding: 1rem;
+    background-image: url(./img/lastbg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 5px;
+    @include lg {
+      flex-direction: row;
+      justify-content: space-around;
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+      justify-content: flex-end;
+    }
+    .form-1 {
+      color: $default-fnt-clr;
+      background-color: white;
+      max-width: fit-content;
+      padding: 2rem;
+      border-radius: 20px;
+      p {
+        margin: 0;
+        text-align: left;
+      }
+      h3 {
+        font-size: x-large;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        font-family: $default-fnt;
+
+        input {
+          min-height: 3rem;
+          border-radius: 10px;
+          border: 1px solid $default-fnt-clr;
+          margin: 0.6rem 0;
+          padding-left: 0.5rem;
+          &:active {
+            outline: 2px solid $default-fnt-clr;
+          }
+          &:hover {
+            border: 2px solid $default-fnt-clr;
+          }
+        }
+        label {
+          padding: 10px 0;
+        }
+        textarea {
+          border-radius: 10px;
+          border: 1px solid $default-fnt-clr;
+          margin: 10px 0;
+          padding-left: 10px;
+          padding-top: 10px;
+          &:active {
+            outline: 2px solid $default-fnt-clr;
+          }
+          &:hover {
+            border: 2px solid $default-fnt-clr;
+          }
+        }
+      }
+      button {
+        background-color: $default-fnt-clr;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        padding: 20px 0;
+        font-size: medium;
+        &:hover {
+          background-color: $header-color-red;
+        }
+      }
+
+      @include lg {
+        position: absolute;
+        bottom: 25%;
+        left: 8%;
+        color: $default-fnt-clr;
+        background-color: white;
+        padding: 3rem;
+        div {
+          .big-span {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          }
+        }
+      }
+    }
+    .form-2 {
+      background-color: $header-color-red;
+      color: white;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border-radius: 20px;
+      font-family: $default-fnt;
+      label {
+        padding: 0.8rem 0 0.8rem 0;
+        display: block;
+      }
+      input {
+        min-height: 58px;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        &:active {
+          outline: 2px solid $default-fnt-clr;
+        }
+        &:hover {
+          border: 2px solid $default-fnt-clr;
+        }
+      }
+      button {
+        @include btn-clr($bg-clr: yellow);
+        color: $default-fnt-clr;
+        min-width: 100%;
+        &:hover {
+          background-color: white;
+          color: $default-fnt-clr;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .home-ul {
+    align-self: center;
+    margin-top: 0;
+    padding: 0;
+    font-family: courgette;
+    font-size: 1.6rem;
+    .home {
+      margin: 0;
+      background-color: red;
+      color: white;
+      padding: 1rem;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      max-width: fit-content;
+    }
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid $default-fnt-clr;
+    border-bottom: 1px solid $default-fnt-clr;
+    ul {
+      text-align: left;
+      list-style: none;
+      font-family: $default-fnt;
+      color: gray;
+      line-height: 1.6;
+      > :first-child {
+        color: $default-fnt-clr;
+        font-size: large;
+        font-weight: 600;
+      }
+      .buttonss {
+        display: flex;
+
+        .buttons {
+          align-self: center;
+          padding-top: 25px;
+          align-self: flex-start;
+          display: flex;
+          gap: 15px;
+          button {
+            @include btn-story;
+            span {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .big-fnt {
+              font-size: large;
+            }
+          }
+        }
+      }
+    }
+  }
+}
